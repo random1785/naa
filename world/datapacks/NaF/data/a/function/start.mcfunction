@@ -1,3 +1,5 @@
+gamemode survival @a[gamemode=adventure]
+
 execute if score pcount p matches 1 run execute as @a[sort=random,limit=1,gamemode=survival] run team join a @s
 execute if score pcount p matches 2 run execute as @a[sort=random,limit=1,gamemode=survival] run team join a @s
 execute if score pcount p matches 3 run execute as @a[sort=random,limit=2,gamemode=survival] run team join a @s
