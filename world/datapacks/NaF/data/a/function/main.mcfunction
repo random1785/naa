@@ -25,6 +25,7 @@ scoreboard objectives add p dummy
 scoreboard objectives add o dummy
 scoreboard objectives add random dummy
 scoreboard objectives add survival dummy
+scoreboard players reset @a survival
 
 team add a
 team add b
@@ -36,5 +37,7 @@ team modify b color blue
 tag @a remove started
 
 
+
+kill @e[type=armor_stand,tag=spawn]
 execute as @r at @s run setworldspawn ~ 300 ~
 execute as @r at @s run summon minecraft:armor_stand ~ ~ ~ {NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["spawn"]}

@@ -16,6 +16,7 @@ execute as @a[scores={death=1..}] run tellraw @a[gamemode=spectator] [{"selector
 execute as @a[scores={death=1..}] run tellraw @s [{"text":"As a spectator, you ","color":"red"},{"bold":true,"underlined":true,"text":"are not allowed"},{"text":" to contact the alive players in any way."},{"color":"gold","text":" Your SVC will not go to them, so feel free to yap with the other spectators! You can also join the spectating VC to talk about your death.\n"},{"color":"aqua","text":"To teleport to the alive players, simply spam the 1 key on your keyboard. If you want to see everyone's health, run "},{"color":"aqua","underlined":true,"text":"/trigger health."}]
 team leave @a[scores={death=1..}]
 execute as @a[scores={death=1..}] run team leave @a[gamemode=spectator]
+execute as @a[scores={death=1..}] run gamemode spectator @s
 execute as @a[scores={death=1..}] run scoreboard players reset @s death
 
 kill @e[type=villager]
@@ -58,5 +59,6 @@ execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival,scores={r
 
 
 scoreboard players add @a[gamemode=survival,tag=started] survival 1
+execute as @e[type=armor_stand,tag=spawn] at @s run title @a[distance=30..,gamemode=adventure] times 0 20 20
 execute as @e[type=armor_stand,tag=spawn] at @s run title @a[distance=30..,gamemode=adventure] title {"text":"Go back to spawn.","color":"dark_red"}
 execute as @e[type=armor_stand,tag=spawn] at @s run execute as @a[distance=30..,gamemode=adventure] run tellraw @a [{"selector":"@s","color":"dark_red"},{"text":" needs to go back to spawn."}]
