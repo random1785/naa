@@ -52,8 +52,10 @@ scoreboard players enable @a[gamemode=spectator] health
 execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival] run execute unless entity @s[team=b] run tellraw @a[gamemode=spectator] [{"selector":"@s","bold":true,"color":"gold"},{"text":" has joined late."}]
 execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival] run execute unless entity @s[team=b] run execute store result score @s random run random value 1..2
 execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival,scores={random=1}] run execute unless entity @s[team=b] run title @s actionbar {"text":"You are on Team 1!","color":"red","bold":true}
+execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival,scores={random=1}] run execute unless entity @s[team=b] run tag @s add started
 execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival,scores={random=1}] run execute unless entity @s[team=b] run team join a @s
 execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival,scores={random=2}] run execute unless entity @s[team=b] run title @s actionbar {"text":"You are on Team 2!","color":"blue","bold":true}
+execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival,scores={random=2}] run execute unless entity @s[team=b] run tag @s add started
 execute as @r[tag=started] run execute as @a[team=!a,gamemode=survival,scores={random=2}] run execute unless entity @s[team=b] run team join b @s
 
 
